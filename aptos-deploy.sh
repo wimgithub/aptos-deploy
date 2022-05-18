@@ -12,6 +12,7 @@ check_root() {
 }
 
 install_docker(){
+    sudo su;
     check_root
     ##安装docker
     # curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
