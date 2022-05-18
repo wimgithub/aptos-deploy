@@ -33,10 +33,10 @@ install_docker(){
 }
 
 install_aptos(){
-    ip = curl ifconfig.me
-    echo $ip
-    name = curl ifconfig.me
-    echo $name
+    ip=$(curl ifconfig.me)
+    echo "ip: "$ip
+    name=$ip
+    echo "name: "$name
     # 创建目录 & 打开目录
     sudo mkdir -p ~/aptos-node/testnet && cd ~/aptos-node/testnet
     # 加载Image & 数据卷映射，
@@ -77,7 +77,7 @@ install_aptos(){
 }
 
 read_aptos(){
-    read -p " 请输入节点名字:" name
+    name=$(curl ifconfig.me)
     cat $name.yaml
 }
 
